@@ -1790,5 +1790,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: beretta m9
       objectReference: {fileID: 0}
+    - target: {fileID: 7415022419693213733, guid: 7e588c5917b9e074682a0a4b028c192f, type: 3}
+      propertyPath: shotForce
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e588c5917b9e074682a0a4b028c192f, type: 3}
