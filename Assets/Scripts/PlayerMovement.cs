@@ -11,6 +11,11 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 4.0f; // Corrected the typo here
     public float gravity = -9.8f;
     public bool isJumping = false;
+    public bool Shooting;
+
+    //Items
+
+    public PistolController pistol;
 
     void Start()
     {
@@ -24,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
         float ver = Input.GetAxis("Vertical");
         Vector3 movement = Vector3.zero; // Corrected the typo here
         float movementSpeed = 0;
+
+        ItemsControl();
 
         if (hor != 0 || ver != 0)
         {
@@ -55,12 +62,26 @@ public class PlayerMovement : MonoBehaviour
             animator.SetTrigger("Jump");
             isJumping = true;
         }
+
+        // Disparar
+        Shooting = Input.GetKeyDown(KeyCode.Mouse0); //Botton Izquierdo del mouse
     }
 
     // Llamado desde un evento de animación para indicar el final del salto
     public void OnJumpAnimationFinished()
     {
         isJumping = false;
+    }
+
+    public void ItemsControl()
+    {
+        if (pistol != null)
+        {
+            if(Shooting)
+            {
+                pistol.Shoot();
+            }
+        }
     }
 }
 
