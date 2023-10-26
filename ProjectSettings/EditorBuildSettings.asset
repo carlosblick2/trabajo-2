@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Carlos Scene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Nivel 2.unity
+    guid: ac6083210f3c05b47b56b9805e81c7dc
+  - enabled: 1
+    path: Assets/Scenes/Nivel 3.unity
+    guid: 302ecb2f447748d4689bec8113dc21f7
   m_configObjects: {}

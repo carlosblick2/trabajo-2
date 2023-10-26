@@ -22,7 +22,8 @@ public class LogicaEnemigo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.Find("Jugador");
+        target = GameObject.Find("Raven");
+        vida = gameObject.GetComponent<Vida>();
         vidaJugador = target.GetComponent<Vida>();
         if (vidaJugador == null)
         {
@@ -56,16 +57,8 @@ public class LogicaEnemigo : MonoBehaviour
     void EstaDeFrenteAlJugador()
     {
         Vector3 adelante = transform.forward;
-        Vector3 targetJugador = (GameObject.Find("Jugador").transform.position - transform.position).normalized;
+        Vector3 targetJugador = (GameObject.Find("Player").transform.position - transform.position).normalized;
 
-        if(Vector3.Dot(adelante,targetJugador)< 0.6f)
-        {
-            mirando = false;
-        }
-        else
-        {
-            mirando = true;
-        }
     }
 
     void RevisarVida()
@@ -90,12 +83,14 @@ public class LogicaEnemigo : MonoBehaviour
 
     void RevisarAtaque()
     {
+        
         if (Vida0) return;
         if (estaAtacando) return;
         if (logicaJugador.Vida0) return;
+        
         float distanciaDelBlanco = Vector3.Distance(target.transform.position, transform.position);
-
-        if (distanciaDelBlanco <= 2.0 && mirando)
+        print(distanciaDelBlanco);
+        if (distanciaDelBlanco <= 2.0)
         {
             Atacar();
         }
