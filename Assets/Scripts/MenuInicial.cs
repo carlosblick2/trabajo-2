@@ -16,4 +16,9 @@ public class MenuInicial : MonoBehaviour
         Debug.Log("Salir...");
         Application.Quit();
     }
+
+    public void IrAlNivel(string NombreNivel)
+    {
+        SceneManager.LoadScene(NombreNivel);
+    }
 }
