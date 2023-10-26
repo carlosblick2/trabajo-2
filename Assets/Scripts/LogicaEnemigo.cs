@@ -89,7 +89,6 @@ public class LogicaEnemigo : MonoBehaviour
         if (logicaJugador.Vida0) return;
         
         float distanciaDelBlanco = Vector3.Distance(target.transform.position, transform.position);
-        print(distanciaDelBlanco);
         if (distanciaDelBlanco <= 2.0)
         {
             Atacar();
